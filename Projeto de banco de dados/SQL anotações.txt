@@ -1,0 +1,161 @@
+Cria/Insere/Consulta/Atualiza/Delete
+
+create table empregado (
+    cpf numeric(11) not null,      -- tipo, not null=obrigatorio
+    nome varchar(50) not null,
+    sal numeric(10,2) not null,   -- 10 digitos, 2 é dps da virgula
+    primary key (cpf)
+);
+
+create table projeto (
+    numero numeric(5) not null,      -- tipo, not null=obrigatorio
+    nome varchar(50) not null,
+    primary key (numero)
+);
+
+create table Projeto_Empregado (
+    cpf_emp numeric(11) not null references pessoa(cpf), --referencia n recomendada
+    numero_pro numeric(5) not null,
+    dt_ini_pro date,
+    hor_trab_pro int,
+    primary ket (cpf_emp, numero_pro)
+);
+
+--FK's
+alter table Projeto_Empregado
+    add constraint fk_proemp_empregado foreign key (cpf_emp) references empregado(cpf);
+
+alter table Projeto_Empregado
+    add constraint fk_proemp_projeto foreign key (numero_pro) references projeto(numero);
+
+~Para executar
+SQLEditor execute SLQScript
+
+--Inserção
+INSERT INTO projeto(numero, nome)
+VALUES
+('66', 'Nirvana'),
+('11', 'Apolo');
+
+-- Não é necessário colocar todas as colunas, somente as obrigatorias
+
+--CONSULTAS no SQL
+-- SQL 
+select coluna, coluna2, .. --select * from empregado -- '*' serve para todos
+from empregado --FROM Serve pra especificar a entidade onde vai consultar
+order by nome desc --ordenação 'order by'
+
+--Toda consulta que for realizada em um Bando de dados relacional vai 
+retornar uma relação.
+
+--P/ retirar ambiguidade no select, usa-se 'empregado.nome' ou 'cargo.nome'
+
+--FILTRO
+where 
+    condicao logíca
+    ou
+    cpf in (111, 222, 555, 888) --utilizando comando 'in'
+    --between é um comando para or inclusivo
+
+delete from
+
+inner join
+-verifica e a condição nos dois lados
+
+left join
+-verifica a traz a condicao, e tambem traz os da esquerda sem MATCH
+
+right join
+-verifica e traz a condicao, e tambem traz os da direita sem MATCH
+
+join
+
+full outer join - comando do postgree ideal para consultas com MATCH
+
+
+--Atualizar/Editar uma trupla existente
+update empregado    
+set cod_cargo =1,
+    sal = 425
+where cpf in (111, 222, 555, 888)
+
+atributos derivados por funcoes de agrupamento:
+select
+    count(),
+    max(),
+    min(),
+    sum(),
+    to_char() --n precisa de agrupamento
+group by --agrupa as repetiçoes desse grupo
+--as funções no select dependem do agrupamento
+
+count(coluna)--conta a coluna com valores repetidos quando eles não sao nulos
+
+coalesce(primeiro,segundo,terceiro,....,n-1,n) --verifica cada item e vai 
+verificando se ele for nulo no final, vc coloca aquilo q quer q saia no 
+lugar de NULO
+
+with
+--define relações a partir de consultas antes da consulta ser executada
+
+--ORDEM DAS COISAS
+seleção
+    select
+    from
+    join
+FILTRO
+    where
+agrupar
+    group
+FILTRO DE agrupamento
+    having
+ordenação
+
+--CONDICIONAL 23/11
+
+--para casos de if
+case 
+    when condicao then entao
+    when condicao then entao
+    when condicao then entao
+    else entao
+end 
+
+--switch case --SWITCH CASE PODE SER USADO CASO A CONDICAO FOR IGUALDADE
+case count(fp.fk_proemp_projeto)
+    when 0 then 0.0
+    when 1 then 5.0
+    when 2 then 10.0
+    when 3 then 15.0
+    else 20.0
+end
+
+select
+    p.nome,
+    (
+        case t.fk_pessoa
+
+    )
+from pessoa p, telefone t
+
+select
+    p.nome,
+    t.numero
+from pessoa p
+inner join telefone t on t.fk_pessoa = p.cpf
+
+
+--CRIACAO DE TIPO 
+
+create type tp_sexo as enum ('M', 'F', 'O');
+
+alter table pessoa
+    add column sexo tp_sexo;
+
+--OU 
+alter table pessoa
+    add column sexo char(1),
+    add check (sexo = 'm' or sexo = 'f' or sexo = 'o');
+
+    --ou 
+    add constraint ck_sexo check (sexo = 'm' or sexo = 'f' or sexo = 'o');

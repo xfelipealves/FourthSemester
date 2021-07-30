@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\felip\Desktop\Drive\Trabalhos faculdade\CMP 1099 Estrutura de Dados 2\trabsort\Nova pasta\ConsoleApplication1\ConsoleApplication1\main.cpp(37,49): warning C4474: 'printf': excesso de argumentos transmitidos para cadeia de caracteres de formato
+C:\Users\felip\Desktop\Drive\Trabalhos faculdade\CMP 1099 Estrutura de Dados 2\trabsort\Nova pasta\ConsoleApplication1\ConsoleApplication1\main.cpp(37,49): message : espaços reservados e seus parâmetros esperam 1 argumentos variadic, mas 2 foram fornecidos
+C:\Users\felip\Desktop\Drive\Trabalhos faculdade\CMP 1099 Estrutura de Dados 2\trabsort\Nova pasta\ConsoleApplication1\ConsoleApplication1\main.cpp(45,49): warning C4474: 'printf': excesso de argumentos transmitidos para cadeia de caracteres de formato
+C:\Users\felip\Desktop\Drive\Trabalhos faculdade\CMP 1099 Estrutura de Dados 2\trabsort\Nova pasta\ConsoleApplication1\ConsoleApplication1\main.cpp(45,49): message : espaços reservados e seus parâmetros esperam 1 argumentos variadic, mas 2 foram fornecidos
+C:\Users\felip\Desktop\Drive\Trabalhos faculdade\CMP 1099 Estrutura de Dados 2\trabsort\Nova pasta\ConsoleApplication1\ConsoleApplication1\main.cpp(53,49): warning C4474: 'printf': excesso de argumentos transmitidos para cadeia de caracteres de formato
+C:\Users\felip\Desktop\Drive\Trabalhos faculdade\CMP 1099 Estrutura de Dados 2\trabsort\Nova pasta\ConsoleApplication1\ConsoleApplication1\main.cpp(53,49): message : espaços reservados e seus parâmetros esperam 1 argumentos variadic, mas 2 foram fornecidos
+  ConsoleApplication1.vcxproj -> C:\Users\felip\Desktop\Drive\Trabalhos faculdade\CMP 1099 Estrutura de Dados 2\trabsort\Nova pasta\ConsoleApplication1\Debug\ConsoleApplication1.exe

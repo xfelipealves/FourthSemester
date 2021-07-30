@@ -1,0 +1,34 @@
+void BFS(int s, int* d, int* p)
+{
+    For(i=0; i<N, i++)
+    {
+         d[i]=INT_MAX;
+         p[i]=-1;
+         c[i]='w';//collor
+    }
+    d[s]=0;
+    Queue Q;
+    Q.push(s);
+    c[s]='g';
+    
+    while(!Q.empty())
+    {
+        u=Q.front();
+        For(int i=0; i<N; i++)
+        {
+            if(M[u][i]==1)
+            {
+                 v=M[u][i];
+                 if(c[v]=='w')
+                 {
+                      Q.push(v);
+                      c[v]='g';
+                      p[v]=u;
+                      d[v]=d[u]+1;
+                 }
+            }
+        }
+        c[u]='b';
+        Q.pop();
+    }
+}

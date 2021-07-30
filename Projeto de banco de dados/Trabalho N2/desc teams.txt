@@ -1,0 +1,39 @@
+O documento PDF em anexo descreve o trabalho.
+
+Recomenda-se a leitura COMPLETA do documento para se ter uma ideia de todo o trabalho que será executado.
+
+Entretanto, para a N2, apenas as consultas devem ser entregues, uma vez que o script de criação do banco e de população das tabelas está disponibilizado.
+
+Assim, apenas dois artefatos devem ser submetidos nessa atividade:
+
+ - Arquivo README.txt contendo os nomes dos membros do grupo.
+ - Arquivo trabalho-n2-consultas.sql contendo todas as consultas em SQL solicitadas no documento e devidamente identificadas por um comentário antes de cada uma.
+
+IMPORTANTE: Não enviar os arquivos compactados.
+
+Se o grupo decidir criar a aplicação que se conecta ao banco de dados, deverá, também, submeter um arquivo chamado programa.zip contendo os códigos fontes do programa produzido. Não colocar executáveis dentro do zip.
+
+Os trabalhos podem ser realizados de forma individual e em grupos de ATÉ 4 alunos.
+Apenas um dos membros do grupo deve enviar o trabalho. Os demais não precisa efetuar nenhum registro nessa atividade.
+
+----- UPDATE -----
+
+Foram adicionados dois arquivos: um .sql e um .dump. Ambos têm o mesmo conteúdo do backup.
+Eles foram adicionado para serem alternativas para alunos que não estão conseguindo carregar o banco usando o .backup.
+
+1 - Método mega rápido
+Em um terminal, estando no mesmo diretório em que o arquivo cmp1117-trabalho-n2.dump, execute o seguinte comando:
+
+psql -U postgres -h 127.0.0.1 nome_do_banco < cmp1117-trabalho-n2.dump
+
+onde nome_do_banco se refere ao nome do seu banco (já criado previamente).
+
+2 - Método mega lento (coloca para rodar e vai maratonar uma série)
+Em um terminal, estando no mesmo diretório em que o arquivo cmp1117-trabalho-n2.sql, execute o seguinte comando:
+
+psql -U postgres -h 127.0.0.1 -d nome_do_banco -q -f cmp1117-trabalho-n2.sql
+
+onde nome_do_banco se refere ao nome do seu banco (já criado previamente).
+
+No caso do método 2, você pode exetuar a execução em uma interface gráfica, mas certamente vai demoarar ainda mais.
+Em todo caso, tentem antes o método 1. Ele é o melhor caminho.

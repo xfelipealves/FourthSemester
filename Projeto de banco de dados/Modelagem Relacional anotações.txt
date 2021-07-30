@@ -1,0 +1,39 @@
+Modelagem Relacional
+
+Pra facilitar a modelagem- Seguem os passos:
+1- Criar uma relação para cada entidade que não esta em uma hierarquia
+2- Representar os relaciomentos 1/n e 1/1
+3-
+
+Relaciomentos
+    1/n - A chave estrangeira empre fica no lado N.
+    1/1 - Deve se analisar a qual é instanciado primeiro, quantidades, etc;
+    n/n - Criar uma relação identificando a chave estrangeira de cada relação
+
+ENTIDADE FRACA-
+    Necessita identificar os atributos identificadores de chave estrangeira
+    da qual ela é fraca.
+
+ENTIDADE ASSOCIATIVA-
+    As chaves estrangeiras de cada ponta N devem ser identificadores
+
+Obs: A entidade que receber a chave estrangeira que tambem é estrangeira
+na entidade recebida, deve se especificar com observação dizendo oq é FK
+e de onde vem.
+
+ESPECIALIZAÇÃO      //disjunto é o exclusivo e sobreposto é o não exclusivo 
+    Especialização disjunta com atributos diferentes em cada uma das
+    especializações pode ser representada com um modelo Relacional
+    para a entidade primária, e outro modelo para cada Especialização
+    herdando o identificador e os atributos especificos da Especialização.
+
+Ex: Pessoa (cpf,nome)
+    Funcionario(currículo, #cpf_pes)//cpf_pes é identificador
+    Cliente(endereco, #cpf_pes)     //cpf_pes é identificador
+
+Ex.1 Para caso haver um relacionamento espeficido para uma especialização.
+    Compra(a, b, c, #cpf_cli)   //o cpf_cli é o identificador de Pessoa que
+    vem de Cliente
+
+Nota: Esse método de modelagem tambem pode ser usada para especializações
+sobrepostas.
