@@ -1,0 +1,38 @@
+# Generated compiler outputs
+*.exe
+*.o
+*.out
+*.gch
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+*.pdb
+*.ilk
+*.idb
+*.ipch
+*.tlog
+*.lastbuildstate
+*.log
+
+# Common generated build directories and files
+build/
+cmake-build-*/
+CMakeFiles/
+Debug/
+Release/
+.vs/
+.qmake.stash
+Makefile
+Makefile.Debug
+Makefile.Release
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+# Local IDE metadata
+*.pro.user
+
+# macOS metadata created during extraction or local browsing
+._*
